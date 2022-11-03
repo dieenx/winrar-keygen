@@ -9,7 +9,10 @@
 ## 2. Hướng đẫn sửa dụng và tạo `rarreg.key`
 ### 2.1 hướng dẫn thủ công
 **Bước 1:** Cài đặt [phần mềm ](https://www.win-rar.com/)<br>
-**Bước 2:** Tạo 1  file `rarreg.key` <br>
+**Bước 2:** Tạo 1  [File](https://github.com/dieenx/winrar-keygen/blob/Key/rarreg.key)
+```
+rarreg.key
+````
 **Bước 3:** Dán vào nội dung ở đưới vào `rarreg.key`<br>
 ```console
 RAR registration data
