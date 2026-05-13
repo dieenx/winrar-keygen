@@ -1,155 +1,52 @@
-## Đây là bài viết chỉ mang tính chất giáo dục và tham khảo
+## 1. Winrar là gì ?
+- WinRAR là một ứng dụng nén và giải nén tệp tin (làm giảm số bit của tệp tin) được sử dụng phổ biến trong mọi máy tính
+- Winrar có thể giúp bạn trong việc sao lưu dữ liệu, giảm kích cỡ các file, nén và giải nén các file ở dạng RAR và ZIP.
+- Nó biến những tập tin có kích thước lớn thành những tập tin có kích thước nhỏ hơn, và hoàn toàn có thể giải nén để trở về tập tin gốc mà không làm thay đổi bất kỳ dữ liệu nhỏ nào trong đó.
+- Phần mềm được phân phối là "thử trước khi bạn mua"; nó có thể được sử dụng miễn phí trong 40 ngày
+- WinRAR không phải là một phần mềm miễn phí. Nếu bạn muốn sử dụng nó, bạn phải trả cho RARLAB và sau đó bạn sẽ nhận được một tệp giấy phép có tên `rarreg.key`
+- Kho lưu trữ này sẽ cho bạn biết cách tạo tệp giấy phép WinRAR `rarreg.key`
 
-👉🌐 Nguồn tham khảo: [XDA forums](https://xdaforums.com/t/global-pixel-device-unlock-felica-suica-pasmo-payment-root-required.4706218/)
-
-> ⚠️ **Cảnh báo:**
-> - Mở bootloader = **xoá sạch toàn bộ dữ liệu**
-> - Sai devinfo = có thể **bootloop**
-
----
-
-## 🧰 Chuẩn bị
-
-- ROM gốc đúng model Pixel
-- ADB + Fastboot (Android Platform Tools)
-- Driver USB (Windows)
-- Magisk APK
-- Cáp USB tốt
-
----
-
-## 🔓 Bước 1: Unlock Bootloader
-
-**Trên điện thoại**, bật các tuỳ chọn sau:
-- Developer options
-- USB debugging
-- OEM unlocking
-
-| Ảnh 1 | Ảnh 2 |
-| :---: | :---: |
-| <img width="100" height="200" src="./Screenshot/Screenshot_1.png" /> | <img width="100" height="200" src="./Screenshot/Screenshot_2.png" /> |
-
-**Trên PC**, mở CMD và gõ lần lượt:
-
-```bash
-adb devices
+## 2. Hướng đẫn sửa dụng và tạo `rarreg.key`
+### 2.1 hướng dẫn thủ công
+**Bước 1:** Cài đặt [phần mềm ](https://www.win-rar.com/)<br>
+**Bước 2:** Tạo 1 File
 ```
-
-```bash
-adb reboot bootloader
+rarreg.key
+````
+**Bước 3:** Dán vào nội dung ở đưới vào `rarreg.key`<br>
+```console
+RAR registration data
+WinRar
+Single PC usage license
+UID=96f7c7fe68347c99abaf
+6412212250abaf046c7f90af5da8fe6ad82ea11435c8acca436e5c
+be9e2086a52cd4b316256035c6ab9048e2c5c62f0238f183d28519
+aa87488bf38f5b634cf28190bdf438ac593b1857cdb55a7fcb0eb0
+c3e4c2736090b3dfa45384e08e9de05c5860bb6908b21979926c2f
+29633539c97b766422c670f00b238febb12dc47b9e942f36b7f52d
+d2ff72f8dd61536f48357c21d9130917bf76c1853973e528602c3a
+be64d3dc9d27a99cb6351cc188df5b6d4dd047a92b320550791487
 ```
+**Bước 3:** Vào thư mục cài đặt Winrar<br>
+(theo mặc định => `C:\ProgramFiles\WinRAR` ) <br>
+**Bước 4:** Dán tệp `rarreg .key` vào thư mục WinRAR <br>
+**Bước 5:** Tận hưởng
 
-```bash
-fastboot flashing unlock
-```
 
-**Trên điện thoại:**
-- Dùng phím volume → chọn **UNLOCK**
-- Máy sẽ wipe toàn bộ dữ liệu
+https://user-images.githubusercontent.com/87995853/180626804-a5877e71-5de8-45d6-a0b2-8c0c721e360e.mp4
 
-👉 Boot lại xong: bật lại **USB debugging**
 
----
+### 2.2 Sử dụng phần mềm `winrar keygen` để tạo key của riêng bạn
+| [Download](https://github.com/dieenx/winrar-keygen/raw/main/winrar_keygen.exe)|
+| --------------------------:|
 
-## 🧠 Bước 2: Root bằng Magisk (ví dụ: Pixel 9 dùng init_boot)
+**Bước 1:** Tải ứng dụng và mở lên <br>
+**Bước 2:** sửa phần `Name` và `Type` <br>
+**Bước 3:** `Save Liecense` và di chuyển file `rarreg.key` theo đường đẫn (theo mặc định => `C:\ProgramFiles\WinRAR` )
 
-### 1. Lấy file boot
 
-Tải ROM gốc tại: https://developers.google.com/android/images?hl=vi  
-Ví dụ: Pixel 9 → giải nén lấy file `init_boot.img`
+https://user-images.githubusercontent.com/87995853/180626816-33dd2f37-3dde-4474-923e-46fc8ab711ab.mp4
 
-<img width="400" height="400" src="./Screenshot/Screenshot_3.png" />
 
-### 2. Root máy bằng Magisk (áp dụng từ Pixel 7 trở lên)
-
-- Giải nén file `init_boot.img` từ ROM gốc đã tải, chuyển vào điện thoại
-- Tải và cài đặt app **Magisk** (nguồn [GitHub](https://github.com/topjohnwu/Magisk))
-- Mở Magisk → chọn **Cài đặt** → **Chọn và Vá lỗi file** → tìm `init_boot.img` → làm theo hướng dẫn
-- Magisk tạo file đã vá, lưu trong thư mục **Download** trên điện thoại
-- Chuyển file `Magisk_Patched_Init_Boot.img` sang máy tính, để ở chỗ dễ tìm
-
-**Mở CMD trong thư mục Platform Tools**, cắm cáp vào máy tính rồi gõ:
-
-```bash
-adb devices
-```
-
-```bash
-adb reboot bootloader
-```
-
-```bash
-fastboot flash init_boot_a <đường dẫn tới Magisk_Patched_Init_Boot.img>
-```
-
-```bash
-fastboot flash init_boot_b <đường dẫn tới Magisk_Patched_Init_Boot.img>
-```
-
-Khởi động lại → mở Magisk kiểm tra
-
----
-
-## 💉 Bước 3: Dump & sửa devinfo
-
-**Mở CMD và gõ:**
-
-```bash
-adb shell
-```
-
-```bash
-su
-```
-
-```bash
-dd if=/dev/block/by-name/devinfo of=/sdcard/devinfo.img
-```
-
-> ⚠️ **Lưu ý:** Sau lệnh `su`, mở Magisk trên điện thoại và **cho phép quyền SuperSU** cho adb.
-
-- Tìm file `devinfo.img` trong thư mục gốc điện thoại, copy sang máy tính  
-  *(Nếu không thấy, mở quản lý file → copy vào thư mục khác như Ringtones)*
-- Mở **[Hex Editor](https://hexed.it)** → mở file `devinfo.img` → tìm mã máy theo thị trường  
-  Ví dụ Pixel 9 thị trường Nhật: **G1B60** → sửa thành **G2YBB** (thị trường Mỹ)
-
-| G1B60 | G2YBB |
-| :---: | :---: |
-| <img width="400" height="400" src="./Screenshot/Screenshot_4.png" /> | <img width="400" height="400" src="./Screenshot/Screenshot_5.png" /> |
-
-- Lưu file vừa sửa → copy lại vào thư mục gốc điện thoại
-
-**Ghi devinfo đã sửa vào máy:**
-
-```bash
-adb shell
-```
-
-```bash
-su
-```
-
-```bash
-dd if=/sdcard/devinfo.img of=/dev/block/by-name/devinfo
-```
-
-Khởi động lại điện thoại → vào cài đặt máy ảnh, kiểm tra đã tắt được âm chụp → **thành công** ✅
-
----
-
-## 🧾 Bước 4: Hoàn thiện (stock + lock bootloader)
-
-Flash lại ROM gốc bằng [Android Flash Tool](https://flash.android.com/) → lock lại bootloader.  
-Mã máy sẽ **vĩnh viễn được thay đổi**, kể cả khi khôi phục cài đặt gốc.
-
-| Ảnh 1 | Ảnh 2 |
-| :---: | :---: |
-| <img width="400" height="400" src="./Screenshot/Screenshot_6.png" /> | <img width="400" height="400" src="./Screenshot/Screenshot_7.png" /> |
-
----
-
-## 📸 Ảnh thực tế
-
-| G1B60 | G2YBB |
-| :---: | :---: |
-| <img width="100" height="200" src="./Screenshot/picture_1.png" /> <img width="100" height="200" src="./Screenshot/picture_2.png" /> | <img width="100" height="200" src="./Screenshot/picture_3.png" /> <img width="100" height="200" src="./Screenshot/picture_4.png" /> |
+## 3. Kết quả
+![Capture](https://user-images.githubusercontent.com/87995853/180626853-18e7c1be-f0e9-43e0-b10b-6843fece078c.PNG)
